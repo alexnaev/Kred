@@ -1,0 +1,2 @@
+# Kred
+ Ein lånekalkulator
