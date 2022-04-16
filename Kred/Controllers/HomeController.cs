@@ -1,6 +1,7 @@
 ﻿using Kred.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Kred.Helpers;
 
 namespace Kred.Controllers
 {
@@ -18,17 +19,28 @@ namespace Kred.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult App()
         {
             Loan loan = new();
             loan.Payment = 0.0m;
             loan.TotalInterest = 0.0m;
             loan.TotalCost = 0.0m;
-            loan.Rate = 3m;
-            loan.Amount = 15000m;
+            loan.Rate = 10m;
+            loan.Amount = 150000m;
             loan.Term = 60;
 
             return View(loan);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult App(Loan loan)
+        {
+            var loanHelper = new LoanHelper();
+
+            Loan newLoan = loanHelper.GetPayments(loan);
+            return View(newLoan);
         }
 
         public IActionResult Privacy()
