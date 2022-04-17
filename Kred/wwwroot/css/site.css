@@ -18,6 +18,7 @@ nav {
 }
 
 #payment {
+    font-weight: bold;
     color: var(--primary-color);
 }
 
