@@ -5,9 +5,9 @@
 
 
 <div class="container">
-    <h1 class="mb-2">Loan Calculator</h1>
+    <h1 class="mb-3 mt-4">Loan Calculator</h1>
     <div class="row">
-        <div class="col">
+        <div class="col p-2 calcForm">
             <form asp-controller="Home" asp-action="App" method="post">
                 <div class="form-row">
                     <div class="form-group col-12">
@@ -26,14 +26,14 @@
                 <button type="submit" class="btn btn-dark mt-2">Calculate</button>
             </form>
         </div>
-        <div class="col">
+        <div class="col text-center">
             <div id="paymentTitle">
-                <p>Your Monthly Payments</p>
+                <p class="h5">Your Monthly Payments</p>
             </div>
-            <p id="payment">
+            <p id="payment" class="h1">
                 @Model.Payment.ToString("C")
             </p>
-            <div class="row">
+            <div class="row mt-5">
                 <div class="col-6">
                     <label class="text-left">Total Principal</label>
                 </div>
@@ -57,10 +57,10 @@
     </div>
     @if (Model.Payments.Count > 0)
     {
-         <div class="row">
-            <div class="col">
+         <div class="row mt-3">
+            <div class="col px-0">
                 <table id="scheduleTable" class="table table-striped table-hover">
-                    <thead>
+                    <thead class="tableHeader">
                         <tr>
                             <th>Month</th>
                             <th>Payment</th>

@@ -43,7 +43,7 @@ namespace Kred.Controllers
             return View(newLoan);
         }
 
-        public IActionResult Privacy()
+        public IActionResult Code()
         {
             return View();
         }
