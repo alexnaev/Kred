@@ -32,26 +32,26 @@
                 <p class="h5">Your Monthly Payments</p>
             </div>
             <p id="payment" class="h1">
-                @Model.Payment.ToString("C", CultureInfo.CurrentCulture)
+                @Model.Payment.ToString("C", CultureInfo.CreateSpecificCulture("no-NO"))
             </p>
             <div class="row mt-5">
                 <div class="col-6">
                     <label class="text-left">Total Principal</label>
                 </div>
                 <div class="col-6 text-right" id="totalPrincipal">
-                    @Model.Amount.ToString("C", CultureInfo.CurrentCulture)
+                    @Model.Amount.ToString("C", CultureInfo.CreateSpecificCulture("no-NO"))
                 </div>
                 <div class="col-6">
                     <label class="text-left">Total Interest</label>
                 </div>
                 <div class="col-6 text-right" id="totalInterest">
-                    @Model.TotalInterest.ToString("C", CultureInfo.CurrentCulture)
+                    @Model.TotalInterest.ToString("C", CultureInfo.CreateSpecificCulture("no-NO"))
                 </div>
                 <div class="col-6">
                     <label class="text-left">Total Cost</label>
                 </div>
                 <div class="col-6 text-right" id="totalCost">
-                    @Model.TotalCost.ToString("C", CultureInfo.CurrentCulture)
+                    @Model.TotalCost.ToString("C", CultureInfo.CreateSpecificCulture("no-NO"))
                 </div>
             </div>
         </div>
@@ -76,11 +76,11 @@
                         {
                             <tr>
                                 <td>@item.Month</td>
-                                <td>@item.Payment.ToString("C", CultureInfo.CurrentCulture)</td>
-                                <td>@item.MonthlyPrincipal.ToString("C", CultureInfo.CurrentCulture)</td>
-                                <td>@item.MonthlyInterest.ToString("C", CultureInfo.CurrentCulture)</td>
-                                <td>@item.TotalInterest.ToString("C", CultureInfo.CurrentCulture)</td>
-                                <td>@item.Balance.ToString("C", CultureInfo.CurrentCulture)</td>
+                                <td>@item.Payment.ToString("C", CultureInfo.CreateSpecificCulture("no-NO"))</td>
+                                <td>@item.MonthlyPrincipal.ToString("C", CultureInfo.CreateSpecificCulture("no-NO"))</td>
+                                <td>@item.MonthlyInterest.ToString("C", CultureInfo.CreateSpecificCulture("no-NO"))</td>
+                                <td>@item.TotalInterest.ToString("C", CultureInfo.CreateSpecificCulture("no-NO"))</td>
+                                <td>@item.Balance.ToString("C", CultureInfo.CreateSpecificCulture("no-NO"))</td>
                             </tr>
                         }
                     </tbody>
